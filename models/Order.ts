@@ -5,7 +5,7 @@ export interface IOrder extends Document {
   customerName: string;
   items: { menuItem: string; quantity: number }[];
   totalPrice: number;
-  status: string; // "pending" | "completed"
+  status: string;
   createdAt: Date;
 }
 
@@ -15,7 +15,7 @@ const OrderSchema = new Schema<IOrder>(
     items: [
       {
         menuItem: { type: String, required: true },
-        quantity: { type: Number, required: true, min: 1 },
+        quantity: { type: Number, required: true },
       },
     ],
     totalPrice: { type: Number, required: true },
@@ -26,4 +26,5 @@ const OrderSchema = new Schema<IOrder>(
 );
 
 const Order = models.Order || mongoose.model<IOrder>("Order", OrderSchema);
-export default Order;
+
+export default Order;   // ✅ default export
