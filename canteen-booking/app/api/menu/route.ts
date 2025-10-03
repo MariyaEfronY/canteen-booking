@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
-import { dbConnect } from "../../../lib/mongodb";
-import { MenuItem } from "@/models/MenuItem";
+import { dbConnect } from "../../../../lib/mongodb";
+import { MenuItem } from "../../../../models/MenuItem";
+
 
 export async function GET() {
   await dbConnect();
