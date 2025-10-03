@@ -1,8 +1,7 @@
 import { NextResponse } from "next/server";
 // Update the import path if the file is in a different location, e.g.:
-import dbConnect from "@/lib/mongodb";   // ✅ correct
-import Order from "@/models/Order";      // ✅ correct
-
+import dbConnect from "../../../lib/mongodb";   // ✅ go up 2 levels
+import Order from "../../../models/Order";  
 
 export async function GET() {
   await dbConnect();
